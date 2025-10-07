@@ -1,0 +1,101 @@
+ :root {
+     --bg: #020405;
+     --text: #009207;
+     --muted: #76c7a6;
+     --accent: #00c16a;
+     --bar-bg: #071214;
+ }
+
+ html,
+ body {
+     height: 100%;
+     margin: 0;
+     background: var(--bg);
+     color: var(--text);
+     font-family: "Courier New", monospace;
+     display: flex;
+     align-items: center;
+     justify-content: center
+ }
+
+ .wrap {
+     width: 92%;
+     max-width: 900px;
+     padding: 20px
+ }
+
+ pre#console {
+     background: rgba(0, 0, 0, 0.6);
+     border-radius: 8px;
+     padding: 18px;
+     min-height: 48vh;
+     max-height: 60vh;
+     overflow: auto;
+     line-height: 1.6;
+     font-size: 16px;
+     margin: 0;
+     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+ }
+
+ /* output text area and cursor as inline elements inside the pre */
+ #output {
+     white-space: pre-wrap;
+     display: inline;
+ }
+
+ .cursor {
+     display: inline-block;
+     width: 10px;
+     height: 1.1em;
+     background: var(--text);
+     vertical-align: middle;
+     margin-left: 4px;
+     animation: blink 900ms steps(1) infinite;
+ }
+
+ @keyframes blink {
+
+     0%,
+     50% {
+         opacity: 1
+     }
+
+     51%,
+     100% {
+         opacity: 0
+     }
+ }
+
+ .progress-wrap {
+     margin-top: 14px
+ }
+
+ .progress-track {
+     background: var(--bar-bg);
+     border-radius: 8px;
+     height: 18px;
+     border: 1px solid rgba(255, 255, 255, 0.03);
+     overflow: hidden
+ }
+
+ .progress-fill {
+     height: 100%;
+     width: 0%;
+     background: linear-gradient(90deg, var(--accent), #00a86b);
+     transition: width 200ms linear
+ }
+
+ .progress-meta {
+     display: flex;
+     justify-content: space-between;
+     color: var(--muted);
+     font-size: 13px;
+     margin-top: 6px
+ }
+
+ .center {
+     text-align: center;
+     color: var(--muted);
+     margin-top: 10px;
+     font-size: 14px
+ }
